@@ -151,13 +151,13 @@ var _audit_syscalladded bool
 
 // Load x86 map and fieldtab.json
 func loadSysMap_FieldTab(x86_map interface{}, fieldmap *Field) error {
-	path, _ := filepath.Abs("libaudit-go/audit_x86_64.json")
+	path, _ := filepath.Abs("audit_x86_64.json")
 	content2, err := ioutil.ReadFile(path)
 	if err != nil {
 		return err
 	}
 
-	path, _ = filepath.Abs("libaudit-go/fieldtab.json")
+	path, _ = filepath.Abs("fieldtab.json")
 	content3, err := ioutil.ReadFile(path)
 	if err != nil {
 		return err
@@ -200,7 +200,7 @@ func AuditRuleSyscallData(rule *AuditRuleData, scall int) error {
 
 func AuditNameToFtype(name string, value *int) error {
 
-	path, _ := filepath.Abs("libaudit-go/ftypetab.json")
+	path, _ := filepath.Abs("ftypetab.json")
 	content, err := ioutil.ReadFile(path)
 
 	if err != nil {
